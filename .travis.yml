@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - 12
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
+  - docker-compose -f docker-compose-build.yaml build --parallel
+  - docker tag simple-node quochuy3456/udagram-api-user:latest
+  - docker tag simple-node quochuy3456/udagram-api-feed:latest
+  - docker tag simple-node quochuy3456/udagram-frontend:latest
+  - docker tag simple-node quochuy3456/reverseproxy:latest
+
+# Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker tag quochuy3456/udagram-api-user:latest
+  - docker tag quochuy3456/udagram-api-feed:latest
+  - docker tag quochuy3456/udagram-frontend:latest
+  - docker tag quochuy3456/reverseproxy:latest
