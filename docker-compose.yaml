@@ -17,7 +17,7 @@ services:
       POSTGRES_DB: $POSTGRES_DB
       POSTGRES_HOST: $POSTGRES_HOST
       AWS_REGION: $AWS_REGION
-      AWS_PROFILE: $AWS_PROFILE
+      AWS_PROFILE: "project4"
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
@@ -32,7 +32,7 @@ services:
       POSTGRES_DB: $POSTGRES_DB
       POSTGRES_HOST: $POSTGRES_HOST
       AWS_REGION: $AWS_REGION
-      AWS_PROFILE: $AWS_PROFILE
+      AWS_PROFILE: "project4"
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
