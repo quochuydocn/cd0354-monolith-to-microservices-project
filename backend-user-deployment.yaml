@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   name: backend-user
   labels:
-    app: backend-user
+    service: backend-user
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: backend-user
+      service: backend-user
   template:
     metadata:
       labels:
-        app: backend-user
+        service: backend-user
     spec:
       containers:
       - name: udagram-api-user
-        image: quochuy3456/udagram-api-user:v3
+        image: quochuy3456/udagram-api-user:v11
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         imagePullPolicy: Always
         resources:
           requests:

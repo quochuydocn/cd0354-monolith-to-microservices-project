@@ -15,11 +15,11 @@ spec:
         service: backend-feed
     spec:
       containers:
-      - image: quochuy3456/udagram-api-feed:v3
+      - image: quochuy3456/udagram-api-feed:v11
         name: backend-feed
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         resources:
           requests:
             memory: "64Mi"
